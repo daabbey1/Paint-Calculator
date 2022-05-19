@@ -192,9 +192,8 @@
                         <td colspan="2">
                             <div class="buttons">
                                 <div class="action-buttons">
-                                    <button type="button" class="sub-btn">-</button>
-                                    <button type="submit" class="add-btn btn-sm" id="add" > +</button>
-                                    {{-- <button type="button" class="add-btn btn-sm" id="add" onclick="AddForm()"  > +</button> --}}
+                                    <button type="button" class="sub-btn btn-sm">Reset</button>
+                                    <button type="submit" class="add-btn btn-sm" id="add" > Add New</button>
                                 </div>
                             </div>
                         </td>
@@ -204,10 +203,9 @@
                                     GRAND TOTAL : GHS 380
                                 </span>
                                 <span class="submit">
-                                    <button type="submit">Submit</button>
+                                    <button type="submit"> Send Mail </button>
                                 </span>
                             </div>
-                            {{-- <label for="Grand-total"> GRAND TOTAL </label> GHS 380 --}}
                         </td>
                     </tr>
                     <tr>
