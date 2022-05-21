@@ -143,14 +143,14 @@ select{
     border: 1.5px solid #079b8a;
     border-radius: 5px;
     color: #079b8a;
-    padding: 5px 10px;
+    padding: 5px 11px;
 }
 
 .sub-btn{
     border: 1.5px solid #079b8a;
     border-radius: 5px;
     color: #079b8a;
-    padding: 3.5px 11px;
+    padding: 5px 11px;
 }
 
 .add-btn:hover,.sub-btn:hover{
@@ -167,6 +167,11 @@ select{
     color: #01c3ac;
 }
 
+#grand-total{
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #0aae9b;
+}
 .total-submit{
     margin-left: 35px;
     margin-right: 60px;
@@ -201,4 +206,35 @@ select{
     color: #01c3ac73;
     background-color: white;
     border-radius: 8px;
+}
+
+/* Modal */
+.modal-title{
+    /* padding-left: 50px; */
+    font-size: 27px;
+    margin: auto;
+    /* font-family:'Times New Roman', Times, serif */
+}
+.modal-content{
+    border-radius: 20px;
+}
+#client-name,#clients-location, #clients-email{
+    display: block;
+    width: 100%;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+
+.modal-body{
+    padding: 30px 70px;
+}
+
+.modal-footer{
+    padding-right: 70px;
+}
+
+.exit{
+    margin-left: 70px;
+    margin-right: auto;
 }

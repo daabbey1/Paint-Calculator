@@ -1,3 +1,5 @@
+var grand_total = 0;
+var counter = 0;
 
 var selectedRow = null;
 
@@ -35,17 +37,16 @@ function readFormData() {
     var paint_qty = 0;
     var paint_price = 0;
     var material_cost = 0;
-    var total, grand_total = 0;
+    var total= 0;
     var Primier_value,Caulking_value,Filla_value,Masky_value = 0;
     var Fee_value = 0;
-    var counter = 0;
     var Length = 0;
     var Breath = 0;
 
   // Assignments
   Length = document.getElementById("length").value;
   Breath = document.getElementById("breath").value;
-
+  // grand_total = document.getElementById("grand-total")
   Primier_value = document.getElementById("primier").value;
   Caulking_value = document.getElementById("caulking").value;
   Filla_value = document.getElementById("filla").value;
@@ -57,10 +58,13 @@ function readFormData() {
   Area = Length * Breath;
 
   //  Quantity of Paint
-  paint_qty = Area / spreading_rate_paint1;
+  var paint_qty_box = (Area / spreading_rate_paint1);
+  paint_qty = (paint_qty_box).toFixed(2);
 
   // Price of Paint
-  paint_price = paint_qty * cost_rate_paint1;
+  var paint_price_box = (paint_qty * cost_rate_paint1);
+  paint_price = (paint_price_box).toFixed(2);
+  
 
   // Get Material Cost
   // if ("Primier" == Primier_value ) {
@@ -86,10 +90,13 @@ function readFormData() {
    counter += 1;
 
   // Total cost inquired
-  total = (1 + paint_price) + material_cost + (Fee_value -1); //Include the material cost later
+  var totalBox = parseFloat(paint_price) + parseFloat(material_cost) + parseFloat(Fee_value - 1) ; //Include the material cost later
+  total = totalBox.toFixed(2);
 
   // Calculate Grand total
-  grand_total += total;
+  var grand_total_box = parseFloat(grand_total) + parseFloat(total);
+  grand_total = (grand_total_box).toFixed(2);
+
 
   var formData = {};
   formData["Counter"] = counter;
@@ -154,6 +161,8 @@ function insertNewRecords(data) {
 
   var cell13 = newRow.insertCell(12);
       cell13.innerHTML = `<button onClick="onEdit(this)" class="action"> <i class="fa-solid fa-pencil"></i> </button> <button onClick="onDelete(this)" class="action"> <i class="fa-solid fa-trash-can"></i> </button>`;
+
+  document.getElementById("grand-total").innerHTML = data.Grand_total;
 }
 
 // EDIT FORM

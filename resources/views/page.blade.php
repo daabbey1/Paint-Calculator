@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="bootsrapFiles\css\bootstrap.min.css" type="text/css">
     <link href="fontAwesome\all.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="images\logo.png">
 
     {{-- <link rel="stylesheet" href="stylesheet\head.css"> --}}
     <link rel="stylesheet" href="page.css">
@@ -192,7 +193,7 @@
                         <td colspan="2">
                             <div class="buttons">
                                 <div class="action-buttons">
-                                    <button type="button" class="sub-btn btn-sm">Reset</button>
+                                    <button type="button" onclick="resetForm()" class="sub-btn btn-sm">Reset</button>
                                     <button type="submit" class="add-btn btn-sm" id="add" > Add New</button>
                                 </div>
                             </div>
@@ -200,16 +201,53 @@
                         <td colspan="1">
                             <div class="total-submit">
                                 <span class="total">
-                                    GRAND TOTAL : GHS 380
+                                    GRAND TOTAL : GHS <span id="grand-total">   </span>
                                 </span>
                                 <span class="submit">
-                                    <button type="submit"> Send Mail </button>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn " data-toggle="modal" data-target="#exampleModal">
+                                        Send Mail
+                                    </button>
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"> INVOICE </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                      <label for="clients-name" id="client-name"> Business / Client's Name </label>
+                                                      <input type="text" class="form-control" id="client-name" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="clients-location" id="clients-location" class=""> Business / Client's Location </label>
+                                                        <input type="text" class="form-control" id="clients-location" placeholder="">
+                                                      </div>
+                                                    <div class="form-group">
+                                                      <label for="clients-email" id="clients-email"> Business / Client's Email </label>
+                                                      <input type="Email" class="form-control" id="clients-email" placeholder="">
+                                                    </div>
+                                                  </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                            {{-- <button type="button" class="btn exit" data-dismiss="modal">Close</button> --}}
+                                            <button type="button" class="btn send-invoice">Send Invoice</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </span>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2"> <hr class="ceil-bar"> </td>
+                        <td colspan="0"> <hr class="ceil-bar"> </td>
                     </tr>
                 </form>
             </table>
@@ -218,8 +256,10 @@
 
 
     {{-- Bootstrap files --}}
-   <script src="bootsrapFiles\js\bootstrap.min.js"></script>
-   <script src="bootsrapFiles\js\propper.js"></script>
-   <script src="js\backendScript.js"></script>
+   <script src="js/backendScript.js"></script>
+   <script src="js/Bootstrapjquery.js"></script>
+    <script defer src="js/all.js"></script>
+    <script src="js/Propper.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
